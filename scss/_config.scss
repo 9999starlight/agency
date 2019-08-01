@@ -1,0 +1,78 @@
+$yellow: rgb(236, 221, 82);
+$overlay: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.57));
+$bluegreen: rgb(17, 119, 109);
+$graphite: #333;
+$background: no-repeat center center/cover;
+
+@mixin backgroundImg($overlay, $url, $background) {
+  background: $overlay, $url $background;
+}
+
+@mixin clip($background) {
+  background: $background;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// z-index, padding, margin-bottom
+$sizes: (1, 2, 3, 4, 5);
+
+@each $size in $sizes {
+  .z#{$size} {
+    z-index: #{$size};
+  }
+
+  .p#{$size} {
+    padding: #{$size}rem;
+  }
+
+  .mb#{$size} {
+    margin-bottom: #{$size}rem;
+  }
+}
+
+// fonts
+@mixin fonts ($size: false, $color: false, $weight: false, $style: false, $family: false, $height: false) {
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $style {
+    font-style: $style;
+  }
+
+  @if $family {
+    font-family: $family;
+  }
+
+  @if height {
+    line-height: $height;
+  }
+}
+
+@mixin alignment($display: false, $direction: false, $align: false, $justify: false) {
+  @if $display {
+    display: $display;
+  }
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $justify {
+    justify-content: $justify;
+  }
+}

@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Lato&display=swap');
+@import 'config';
+@import 'classes';
+@import 'animation';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  color: $graphite;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+
+  &:hover {
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.801);
+}
+
+.landing {
+  @include backgroundImg($overlay, url('../image/frankfurt.jpg'), $background);
+  background-attachment: fixed;
+  @include alignment($display: flex, $justify: center, $align: center);
+
+  .introText {
+    height: 40vh;
+    @include alignment($display: flex, $justify: space-evenly, $align: center, $direction: column);
+    @include fonts($color: #fff);
+
+    h1 {
+      @include fonts($size: 8vh, $family: "Raleway");
+    }
+
+    a {
+      padding: 1.5vh 3vh;
+      border: 1px inset #fff;
+      @include fonts($size: 1.2rem);
+
+      &:hover {
+        background-color: darken($bluegreen, 7%);
+        opacity: 0.7;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.filter {
+  background: rgba(15, 15, 15, 0.849);
+  top: 0;
+  left: 0;
+  height: 100%;
+  animation: left 1s;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+  background: rgba(15, 15, 15, 0.37);
+  @include alignment($display: flex, $justify: flex-end);
+
+  .menu {
+    height: 8vh;
+    width: 8vh;
+    padding: 0 3rem;
+    cursor: pointer;
+    @include alignment($display: flex, $justify: center, $align: center, $direction: column);
+
+    .line {
+      width: 40px;
+      height: 4px;
+      background-color: #fff;
+      transition: 0.5s;
+    }
+
+    .line:nth-of-type(2),
+    .line:nth-of-type(3) {
+      margin-top: 10px;
+    }
+
+    .line.transformMenu:first-of-type {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .line.transformMenu:nth-of-type(2) {
+      transform: rotate(-45deg);
+    }
+
+    .line.transformMenu:nth-of-type(3) {
+      opacity: 0;
+    }
+  }
+
+  nav {
+    top: 0;
+    background: rgba(15, 15, 15, 0.808);
+
+    ul {
+      width: 100%;
+      list-style-type: none;
+      position: absolute;
+      top: 8vh;
+      left: 0;
+      @include alignment($direction: column);
+      animation: left 1s;
+
+      li {
+        border-bottom: 1px rgb(83, 81, 81) solid;
+
+        a {
+          @include fonts($size: 1.2rem, $family: "Raleway");
+
+          &:hover {
+            background-color: rgba(87, 86, 86, 0.87);
+          }
+        }
+      }
+    }
+  }
+}
+
+.aboutIntro {
+  @include alignment($display: flex, $justify: space-around, $align: center);
+  background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+
+  .thinkImage {
+    max-width: 40%;
+    transform: rotate(15deg);
+    @include alignment($direction: column);
+  }
+
+  section {
+    @include alignment($display: flex, $justify: center, $align: flex-start, $direction: column);
+    max-width: 90%;
+
+    h1 {
+      @include fonts($size: 5vh);
+      margin-bottom: 1.5rem;
+      text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+      @include clip(linear-gradient(to right, #ffb91a 0%, #c56510 100%));
+    }
+
+    h1:nth-of-type(2) {
+      @include clip(linear-gradient(to right, #2bc7f3 0%, #1e87a5 42%, #0a5367 58%, #0e7895 68%, #13909c 100%));
+      @include fonts($size: 4vh);
+    }
+  }
+
+  a {
+    @include fonts($size: 2.6rem, $color: rgba(248, 172, 9, 0.555));
+    text-shadow: 1px 1px rgb(87, 63, 3);
+    animation: rotate 5s infinite;
+
+    &:hover {
+      color: rgba(209, 186, 128, 0.733);
+    }
+  }
+}
+
+.about {
+  background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+
+  .aboutHeader {
+    height: 60vh;
+    @include backgroundImg($overlay, url('../image/office-work.jpg'), $background);
+    filter: brightness(150%);
+  }
+
+  .aboutBig {
+    @include alignment($display: flex, $justify: space-around, $align: center, $direction: column);
+    background-color: #af4a0fd8;
+    color: white;
+    @include fonts($size: 2vh);
+    box-shadow: -5px 6px 4px -2px rgb(77, 76, 77);
+  }
+
+  .aboutSmall {
+    @include alignment($display: flex, $justify: center, $align: center, $direction: column);
+    @include fonts($size: 3vh, $color: #A68080, $family: "Raleway");
+    text-shadow: 1px 1px #333;
+  }
+  .smallImg {
+
+    filter: brightness(90%);
+    img {
+      max-height: 200px;
+      box-shadow: none;
+    }
+  }
+}
+
+.services {
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+
+  .servicesHeader {
+    @include backgroundImg($overlay, url('../image/icon.jpg'), $background);
+    grid-column: 1/9;
+    grid-row: 1/5;
+    align-items: center;
+    justify-items: center;
+  }
+
+  main {
+    grid-column: 1/9;
+    grid-row: 3/11;
+    align-items: center;
+    justify-items: center;
+    background-color: #fff;
+
+    article {
+      @include alignment($display: flex, $align: center, $direction: column);
+      text-align: justify;
+      @include fonts($size: 2vh);
+      border-bottom: 1px solid darken($yellow, 10%);
+      height: 100%;
+      
+      p {
+        @include fonts($size: 2vh, $height: 1.5);
+      }
+
+      i {
+        @include fonts($color: lighten($graphite, 40%), $size: 5vh);
+      }
+
+      a {
+        @include fonts($color: lighten($graphite, 40%), $size: 2vh, $style: italic);
+      }
+      figure {
+        max-height: 300px;
+  
+        figcaption {
+          @include fonts($style: italic, $size: 1.8vh);
+        }
+      }
+    }
+    article:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.team {
+
+  @include backgroundImg($overlay, url('../image/wood.jpg'), $background);
+
+  .teamwork img {
+    max-width: 40vw;
+    box-shadow: none;
+  }
+
+  main {
+    @include alignment($display: grid, $justify: space-evenly, $align: center);
+    padding-bottom: 3rem;
+
+    article {
+      @include alignment($display: flex, $justify: center, $align: center, $direction: column);
+      background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+      text-align: left;
+      border-radius: 32px 0px 32px 0px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.541);
+
+      h3 {
+        @include fonts($color: lighten($graphite, 20%), $weight: 300);
+      }
+
+      .pin {
+        align-self: flex-end;
+
+        img {
+          max-height: 60px;
+          box-shadow: none;
+        }
+      }
+
+      .member {
+        img {
+          max-height: 150px;
+          border-radius: 50%;
+        }
+      }
+
+      p {
+        @include fonts($size: 2vh);
+      }
+    }
+  }
+}
+
+.contact {
+  background: $graphite;
+
+  section {
+    min-height: 70vh;
+    @include backgroundImg($overlay, url('../image/contact.jpg'), $background);
+    filter: brightness(200%);
+    clip-path: polygon(0% 0%, 100% 0, 100% 80%, 50% 100%, 0% 80%);
+  }
+
+  footer {
+    background: $graphite;
+    @include alignment($display: flex, $justify: space-evenly, $align: center, $direction: column);
+    color: #fff;
+    min-height: 30vh;
+
+    .social {
+      @include alignment($display: flex, $justify: space-around, $align: center);
+      width: 250px;
+      @include fonts($size: 4vh);
+
+      i:hover {
+        color: $bluegreen;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+}
+
+@import "media";

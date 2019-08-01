@@ -1,0 +1,129 @@
+@media(min-width: 400px) {
+  .services main {
+    grid-column: 2/8;
+  }
+}
+
+@media(min-width:768px) {
+
+  .filter {
+    display: none;
+  }
+
+  header {
+    .menu {
+      display: none;
+    }
+
+    nav {
+      @include alignment($display: flex, $justify: flex-end);
+
+      ul {
+        @include alignment($direction: row);
+        position: relative;
+        top: 0;
+        right: 0;
+        width: auto;
+
+        li {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .aboutIntro {
+    @include alignment($direction: row);
+    position: relative;
+
+    section {
+      max-width: 50%;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 5vh;
+      left: 50%;
+    }
+  }
+
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    justify-items: center;
+
+    .aboutHeader {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 73%);
+      grid-column: 1 / 3;
+      grid-row: 1 / 8;
+    }
+
+    .aboutBig {
+      grid-column: 2 / 3;
+      grid-row: 4/10;
+      width: 80%;
+    }
+
+    .aboutSmall {
+      grid-column: 1 / 2;
+      grid-row: 6/8;
+    }
+
+    .smallImg {
+      grid-column: 1 / 2;
+      grid-row: 8/11;
+    }
+  }
+
+  .teamMain {
+    grid-template-columns: repeat(2, 300px);
+
+    article:hover {
+      transform-origin: top right;
+      animation: move 1s;
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .aboutIntro {
+    figure {
+      max-width: 30%;
+    }
+
+    section h1 {
+      @include fonts($size: 8vh);
+      margin-bottom: 2.5rem;
+    }
+
+    section h1:nth-of-type(2) {
+      @include fonts($size: 6vh);
+    }
+  }
+
+  .services {
+    main {
+      grid-template-columns: repeat(3, 1fr);
+
+      article {
+        border-style: solid;
+        border-color: transparent;
+        border-width: 2px;
+      }
+
+      article:nth-of-type(2) {
+        border-color: transparent darken($yellow, 10%) transparent darken($yellow, 10%);
+      }
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .teamMain {
+    grid-template-columns: repeat(3, 350px);
+  }
+
+  .serviceBlock {
+    padding: 1.5rem;
+  }
+}

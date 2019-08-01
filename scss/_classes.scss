@@ -1,0 +1,34 @@
+.fullWidth {
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.pageWrapper {
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hide {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
