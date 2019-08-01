@@ -1,3 +1,3 @@
 # agency
-responsive website
-experimenting with SASS/SCSS
+responsive one page website
+HTML5 SASS/SCSS JS
