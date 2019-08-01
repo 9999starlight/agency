@@ -1,12 +1,12 @@
 const menu = document.querySelector('.menu');
-const links = document.querySelector('ul');
+const navList = document.querySelector('ul');
 const filter = document.querySelector('.filter');
 const lines = document.querySelectorAll('.line');
 let showMenu = false;
 
 function menuShow() {
-    links.classList.remove('hide');
-    links.classList.add('flex');
+    navList.classList.remove('hide');
+    navList.classList.add('flex');
     filter.classList.remove('hide');
     filter.classList.add('flex;');
     lines.forEach(l => l.classList.add('transformMenu'));
@@ -14,8 +14,8 @@ function menuShow() {
 }
 
 function menuHide() {
-    links.classList.remove('flex');
-    links.classList.add('hide');
+    navList.classList.remove('flex');
+    navList.classList.add('hide');
     filter.classList.remove('flex');
     filter.classList.add('hide');
     lines.forEach(l => l.classList.remove('transformMenu'));
@@ -23,21 +23,27 @@ function menuHide() {
 }
 
 function toggleMenu() {
-    if (!showMenu) menuShow()
-    else menuHide()
+    if (!showMenu) menuShow();
+    else menuHide();
 }
 menu.addEventListener('click', toggleMenu);
 
+// close menu when click on link window.innerWidth < 768
+let links = document.querySelectorAll('.link')
+function hideOpenedMenu() {
+    links.forEach(a => a.addEventListener('click', menuHide));
+}
 
-// close & hide header on scroll
+// show header on scroll up / hide on scroll down
 let previousScrollPosition = window.pageYOffset;
 function hideOnScroll() {
     let currentScrollPosition = window.pageYOffset;
     if (previousScrollPosition > currentScrollPosition) {
         document.querySelector('header').style.display = 'flex';
     } else if (window.innerWidth < 768){
-        menuHide()
+        menuHide();
         document.querySelector('header').style.display = 'none';
+        hideOpenedMenu();
     } else {
         document.querySelector('header').style.display = 'none';
     }
@@ -45,14 +51,15 @@ function hideOnScroll() {
 }
 window.addEventListener('scroll', hideOnScroll);
 
+// show/hide on load & resize
 function mediaLinks() {
     if (window.innerWidth > 767) {
-        links.classList.remove('hide');
-        links.classList.add('flex');
-
+        navList.classList.remove('hide');
+        navList.classList.add('flex');
+        links.forEach(a => a.removeEventListener('click', menuHide));
     } else {
-        links.classList.add('hide');
-        links.classList.remove('flex');
+        navList.classList.add('hide');
+        navList.classList.remove('flex');
     }
 }
 window.addEventListener('load', mediaLinks);
