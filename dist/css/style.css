@@ -343,11 +343,14 @@ header {
         color: #666666;
         font-weight: 300;
         line-height: false; }
+      .team main article img {
+        box-shadow: none;
+        max-height: 60px;
+        width: unset;
+        height: unset;
+        max-width: 100%; }
       .team main article .pin {
         align-self: flex-end; }
-        .team main article .pin img {
-          max-height: 60px;
-          box-shadow: none; }
       .team main article .member img {
         max-height: 150px;
         border-radius: 50%; }
