@@ -143,13 +143,11 @@ header {
 
   .thinkImage {
     max-width: 40%;
-    transform: rotate(15deg);
+    transform: rotate(10deg);
     @include alignment($direction: column);
   }
 
   section {
-    @include alignment($display: flex, $justify: center, $align: flex-start, $direction: column);
-    max-width: 90%;
 
     h1 {
       @include fonts($size: 5vh);
@@ -186,16 +184,18 @@ header {
 
   .aboutBig {
     @include alignment($display: flex, $justify: space-around, $align: center, $direction: column);
-    background-color: #af4a0fd8;
+    @include backgroundImg($overlay, url('../image/fractal.jpg'), $background);
+    filter: opacity(65%);
     color: white;
     @include fonts($size: 2vh);
-    box-shadow: -5px 6px 4px -2px rgb(77, 76, 77);
+    box-shadow: -4px 3px 3px 0px rgba(0, 0, 0, 0.75);
+    text-shadow: 2px 2px #333;
   }
 
   .aboutSmall {
     @include alignment($display: flex, $justify: center, $align: center, $direction: column);
     @include fonts($size: 3vh, $color: #A68080, $family: "Raleway");
-    text-shadow: 1px 1px #333;
+    text-shadow: 2px 2px rgb(24, 23, 23);
   }
 
   .smallImg {
@@ -263,17 +263,19 @@ header {
 }
 
 .team {
+  @include alignment($display: flex, $justify: center, $align: center);
+  @include backgroundImg($overlay, url('../image/fractal.jpg'), $background);
 
-  @include backgroundImg($overlay, url('../image/wood.jpg'), $background);
 
   .teamwork img {
-    max-width: 40vw;
+    max-width: 30vw;
     box-shadow: none;
   }
 
   main {
     @include alignment($display: grid, $justify: space-evenly, $align: center);
     padding-bottom: 3rem;
+    max-width: 1400px;
 
     article {
       @include alignment($display: flex, $justify: center, $align: center, $direction: column);

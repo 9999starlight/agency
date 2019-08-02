@@ -210,30 +210,24 @@ header {
   background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%); }
   .aboutIntro .thinkImage {
     max-width: 40%;
-    transform: rotate(15deg);
+    transform: rotate(10deg);
     flex-direction: column; }
-  .aboutIntro section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 90%; }
-    .aboutIntro section h1 {
-      font-size: 5vh;
-      line-height: false;
-      margin-bottom: 1.5rem;
-      text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
-      background: linear-gradient(to right, #ffb91a 0%, #c56510 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; }
-    .aboutIntro section h1:nth-of-type(2) {
-      background: linear-gradient(to right, #2bc7f3 0%, #1e87a5 42%, #0a5367 58%, #0e7895 68%, #13909c 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 4vh;
-      line-height: false; }
+  .aboutIntro section h1 {
+    font-size: 5vh;
+    line-height: false;
+    margin-bottom: 1.5rem;
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+    background: linear-gradient(to right, #ffb91a 0%, #c56510 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .aboutIntro section h1:nth-of-type(2) {
+    background: linear-gradient(to right, #2bc7f3 0%, #1e87a5 42%, #0a5367 58%, #0e7895 68%, #13909c 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4vh;
+    line-height: false; }
   .aboutIntro a {
     font-size: 2.6rem;
     color: rgba(248, 172, 9, 0.555);
@@ -254,11 +248,13 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: #af4a0fd8;
+    background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.57)), url("../image/fractal.jpg") no-repeat center center/cover;
+    filter: opacity(65%);
     color: white;
     font-size: 2vh;
     line-height: false;
-    box-shadow: -5px 6px 4px -2px #4d4c4d; }
+    box-shadow: -4px 3px 3px 0px rgba(0, 0, 0, 0.75);
+    text-shadow: 2px 2px #333; }
   .about .aboutSmall {
     display: flex;
     flex-direction: column;
@@ -268,7 +264,7 @@ header {
     color: #A68080;
     font-family: "Raleway";
     line-height: false;
-    text-shadow: 1px 1px #333; }
+    text-shadow: 2px 2px #181717; }
   .about .smallImg {
     filter: brightness(90%); }
     .about .smallImg img {
@@ -321,15 +317,19 @@ header {
       border-bottom: none; }
 
 .team {
-  background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.57)), url("../image/wood.jpg") no-repeat center center/cover; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.57)), url("../image/fractal.jpg") no-repeat center center/cover; }
   .team .teamwork img {
-    max-width: 40vw;
+    max-width: 30vw;
     box-shadow: none; }
   .team main {
     display: grid;
     align-items: center;
     justify-content: space-evenly;
-    padding-bottom: 3rem; }
+    padding-bottom: 3rem;
+    max-width: 1400px; }
     .team main article {
       display: flex;
       flex-direction: column;

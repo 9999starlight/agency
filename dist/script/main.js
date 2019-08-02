@@ -1,3 +1,5 @@
+AOS.init();
+
 const menu = document.querySelector('.menu');
 const navList = document.querySelector('ul');
 const filter = document.querySelector('.filter');

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/08b073957b.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Light Cube</title>
   </head>
@@ -21,25 +22,52 @@
         <nav class="fullWidth absolute">
           <ul class="hide">
             <li class="fullWidth z4 center">
-              <a href="index.html#aboutIntro" class="link z4 p1 fullWidth">About</a>
+              <a href="index.html#aboutIntro" class="link z4 p1 fullWidth"
+                >About</a
+              >
             </li>
             <li class="fullWidth z4 center">
-              <a href="index.html#services" class="link z4 p1 fullWidth">Services</a>
+              <a href="index.html#services" class="link z4 p1 fullWidth"
+                >Services</a
+              >
             </li>
             <li class="fullWidth z4 center">
               <a href="index.html#team" class="link z4 p1 fullWidth">Team</a>
             </li>
             <li class="fullWidth z4 center">
-              <a href="index.html#contact" class="link z4 p1 fullWidth">Contact</a>
+              <a href="index.html#contact" class="link z4 p1 fullWidth"
+                >Contact</a
+              >
             </li>
           </ul>
         </nav>
       </header>
       <div class="landing pageWrapper fullWidth">
         <div class="introText center">
-          <h1>Light Cube</h1>
-          <h2>where your dreams become reality</h2>
-          <a href="index.html#aboutIntro">Learn More</a>
+          <h1
+            data-aos="fade-down"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="2000"
+            data-aos-delay="500"
+          >
+            Light Cube
+          </h1>
+          <h2
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="2000"
+            data-aos-delay="500"
+          >
+            where your dreams become reality
+          </h2>
+          <a
+            href="index.html#aboutIntro"
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            data-aos-delay="2000"
+            >Learn More</a
+          >
         </div>
       </div>
 
@@ -47,7 +75,12 @@
         <figure class="thinkImage">
           <img src="./image/think.jpg" alt="think" />
         </figure>
-        <section>
+        <section
+          class="center"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        >
           <h1>Becoming unique</h1>
           <h1>starts with inspiration</h1>
         </section>
@@ -59,7 +92,12 @@
       </div>
       <div class="about pageWrapper grid" id="about">
         <div class="aboutHeader fullWidth relative"></div>
-        <section class="aboutBig z3 p2">
+        <section
+          class="aboutBig z3 p2"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-duration="1000"
+        >
           <h2 class="mb1">About Us</h2>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae,
@@ -92,7 +130,12 @@
       <div class="services grid pageWrapper" id="services">
         <div class="servicesHeader fullWidth"></div>
         <main class="grid p1 z1">
-          <article class="serviceBlock">
+          <article
+            class="serviceBlock"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-duration="500"
+          >
             <i class="fas fa-palette p1"></i>
             <p class="p1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
@@ -107,10 +150,17 @@
             </p>
             <figure class="mb2 p1">
               <img src="./image/workplace.jpg" alt="workplace" />
-              <figcaption class="p1 center">Eligendi doloremque porro</figcaption>
+              <figcaption class="p1 center">
+                Eligendi doloremque porro
+              </figcaption>
             </figure>
           </article>
-          <article class="serviceBlock">
+          <article
+            class="serviceBlock"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-duration="1200"
+          >
             <i class="fas fa-code p1"></i>
             <p class="p1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
@@ -125,10 +175,17 @@
             </p>
             <figure class="mb2 p1">
               <img src="./image/faces.jpg" alt="faces" />
-              <figcaption class="p1 center">Nesciunt voluptas explicabo</figcaption>
+              <figcaption class="p1 center">
+                Nesciunt voluptas explicabo
+              </figcaption>
             </figure>
           </article>
-          <article class="serviceBlock">
+          <article
+            class="serviceBlock"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-duration="1700"
+          >
             <i class="fas fa-desktop p1"></i>
             <p class="p1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
@@ -143,7 +200,9 @@
             </p>
             <figure class="mb2 p1">
               <img src="./image/education.jpg" alt="education" />
-              <figcaption class="p1 center">Nesciunt voluptas explicabo</figcaption>
+              <figcaption class="p1 center">
+                Nesciunt voluptas explicabo
+              </figcaption>
             </figure>
           </article>
         </main>
@@ -289,6 +348,7 @@
         </footer>
       </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script/main.js"></script>
   </body>
 </html>
